@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Selectores CSS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1 {
+            color: darkblue;
+            padding: .5em;
+        }
+        
+        h2 {
+            color: blue;
+        }
+        
+        h3 {
+            padding: 1.5em .9em .5em .9em;
+        }
+        
+        p {
+            color: black;
+            padding: .5em 1em;
+        }
+        
+        p span {
+            color: green;
+        }
+        
+        p.aviso {
+            /*Todos los elementos p con atributo class="aviso"*/
+            color: rgb(167, 136, 131)
+        }
+        
+        p,
+        .aviso {
+            /*Todos los elementos p de la página y todos los elementos con atributo class="aviso" de la página*/
+            font-size: .8em;
+        }
+        
+        p .aviso {
+            /* Todos los elementos con atributo class="aviso" que estén dentro de cualquier elemento de tipo p*/
+            color: cadetblue;
+        }
+        
+        p#aviso1 {
+            /* Todos los elementos de tipo p con atributo id="aviso" */
+            color: rgb(190, 171, 62);
+        }
+        
+        p #aviso2 {
+            /* Todos los elementos con atributo id="aviso" que estén dentro de cualquier elemento de tipo p */
+            color: rgb(180, 23, 83)
+        }
+        
+        p>span {
+            /*Selector de hijo directo*/
+            color: #c8ff00
+        }
+        
+        div p {
+            color: blueviolet;
+        }
+        
+        div>p {
+            color: aquamarine;
+        }
+        
+        span {
+            padding: 1em;
+        }
+        
+        #destacado {
+            color: grey;
+        }
+        
+        .aviso {
+            padding: .1em;
+            border: 1px solid #98be10;
+            background: #f6feda;
+        }
+        
+        .destacado {
+            color: blue;
+            font-size: 15px;
+        }
+        
+        .especial {
+            font-weight: bold;
+        }
+        
+        .error {
+            color: #f30;
+            font-weight: bold;
+        }
+        
+        .error.destacado {
+            /* Selector de clase múltiple 
+            Aquellos elementos que están disponen de un atributo class con al menos los valores error y destacado */
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Ejemplos usando selectores CSS</h1>
+    </header>
+    <main>
+        <section>
+            <article>
+                <h3>Ejemplo Selector Descendiente</h3>
+                <p>
+                    Ejemplo...<span>texto 1</span>...
+                    <a href="https://uniwebsidad.com/libros/css/capitulo-2/selectores-basicos">M&aacute;s info: <span>selectores b&aacute;sicos</span></a>
+                </p>
+            </article>
+            <article>
+                <h3>Ejemplo Selector de Clase</h3>
+                <p class="destacado">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor officiis dicta ea nulla consectetur, expedita, dignissimos sunt dolore natus atque, iusto perspiciatis asperiores id nobis animi modi? Doloribus, obcaecati reiciendis.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi odio laborum, praesentium, reiciendis optio impedit dolor cupiditate, possimus earum necessitatibus asperiores provident! Ipsam distinctio tempore vero dolor excepturi eaque
+                    perspiciatis!
+                </p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi velit quidem eligendi voluptate aut? Excepturi quisquam ducimus velit laboriosam ex distinctio, facere quis sapiente? Ratione voluptate officia maiores omnis doloremque.</p>
+            </article>
+            <article>
+                <h3>Varios elementos pueden utilizar el mismo valor en el atributo class</h3>
+                <p class="destacado">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus rerum molestias ipsa facere accusantium unde, natus accusamus inventore quis nisi voluptate vitae ipsam. Aliquam accusamus, esse pariatur unde ipsum commodi.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <a href="#" class="destacado">Eum quis enim quia</a>, aspernatur modi, facilis nam ipsa harum ex laborum, eveniet repellendus earum consectetur voluptatum error inventore laudantium
+                    autem beatae!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora culpa eos eaque illo blanditiis adipisci commodi reprehenderit corporis cupiditate, odit, similique minima. <em class="destacado">Ducimus soluta</em> ex explicabo omnis
+                    odio, voluptates ea.</p>
+            </article>
+            <article>
+                <h3>Los selectores de clase permiten precisión al seleccionar los elementos</h3>
+                <span class="error">Error: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae vero autem repellat non commodi dicta veritatis dolor odit eum sed! Officiis accusantium nobis ipsam iure dolores non magni odit ex.</span>
+                <span class="aviso">Aviso: Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit culpa alias provident dignissimos pariatur accusamus deserunt omnis, eos ab laudantium illo ratione sed atque perspiciatis ex impedit rem nisi cum?</span>
+            </article>
+            <article>
+                <h3>Todos los elementos p con atributo class="aviso"</h3>
+                <p class="aviso">Lorem...
+                </p>
+                <p class="aviso">Lorem...</p>
+                <p class="aviso">Lorem...</p>
+            </article>
+            <article>
+                <h3>Todos los elementos con atributo class="aviso" que estén dentro de cualquier elemento de tipo p</h3>
+                <p class="aviso">Lorem... <em class="aviso">texto</em>
+                </p>
+                <p class="aviso">Lorem...</p>
+                <p class="aviso">Lorem...</p>
+            </article>
+            <article>
+                <h3>Todos los elementos p de la página y todos los elementos con atributo class="aviso" de la página</h3>
+                <p class="aviso">Lorem... <em class="aviso">texto</em>
+                </p>
+                <p class="aviso">Lorem... <a class="aviso" href="#">texto</a></p>
+                <p class="aviso">Lorem...</p>
+            </article>
+            <article>
+                <h3>Aplicando varias clases CSS sobre un mismo elemento</h3>
+                <p class="especial destacado error">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quia ab nemo iusto pariatur vel amet nulla in, itaque asperiores autem at. Quia, quis sit similique architecto suscipit vel fugiat?</p>
+            </article>
+            <article>
+                <h3>Ejemplo Selector de Clase M&uacute;ltiple</h3>
+                <p class="especial destacado error">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quasi ducimus est blanditiis, quo accusantium odit, dolorem ratione dolore, atque reiciendis recusandae sapiente expedita distinctio iure! Ad ducimus voluptatem perspiciatis.</p>
+            </article>
+            <article>
+                <h3>Ejemplo Selector de ID</h3>
+                <p>Primer p&aacute;rrafo</p>
+                <p id="destacado">Segundo p&aacute;rrafo</p>
+                <p>Tercer p&aacute;rrafo</p>
+            </article>
+            <article>
+                <h3>Todos los elementos de tipo p con atributo id="aviso"</h3>
+                <h3>Ejemplo Selector de ID</h3>
+                <p>Primer p&aacute;rrafo</p>
+                <p id="aviso1">Segundo p&aacute;rrafo</p>
+                <p>Tercer p&aacute;rrafo</p>
+            </article>
+            <article>
+                <h3>Todos los elementos con atributo id="aviso" que estén dentro de cualquier elemento de tipo p</h3>
+                <h3>Ejemplo Selector de ID</h3>
+                <p>Primer p&aacute;rrafo</p>
+                <p>Segundo p&aacute;rrafo <b id="aviso2">...texto...</b></p>
+                <p>Tercer p&aacute;rrafo</p>
+            </article>
+            <article>
+                <h3>Ejemplo Selector Hijo</h3>
+                <p><span>Texto 1</span></p>
+                <p><a href="#"><span>Texto 2</span></a></p>
+            </article>
+            <article>
+                <h3>Ejemplo que muestra la diferencia entre selector descendente y selector de hijos</h3>
+                <div>
+                    <p>Texto 1</p>
+                </div>
+                <div>
+                    <span><p>Texto 2</p></span>
+                </div>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>Curso Argentina Programa 2021</p>
+    </footer>
+</body>
+
+</html>
