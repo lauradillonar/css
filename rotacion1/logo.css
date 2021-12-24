@@ -74,7 +74,7 @@ q:after {
     left: 260px;
 }
 
-#axis:hover .rotate360ccw {
+.axis:hover .rotate360ccw {
     transform: rotate(-360deg);
     -webkit-transform: rotate(-360deg);
     -o-transform: rotate(-360deg);
